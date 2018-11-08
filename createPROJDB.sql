@@ -1,0 +1,43 @@
+CREATE TABLE School
+(SchoolName VARCHAR(256) NOT NULL PRIMARY KEY);
+
+CREATE TABLE Athlete
+(AthleteName VARCHAR(256) NOT NULL, 
+SchoolName VARCHAR(256) NOT NULL,
+Gender CHAR(1) NOT NULL,
+BestMark DECIMAL(6, 2), 
+Event VARCHAR(256) NOT NULL,
+PRIMARY KEY(AthleteName, SchoolName, Event));
+
+CREATE TABLE Meet
+(MeetName VARCHAR(256) NOT NULL, 
+MeetDate VARCHAR(256) NOT NULL,
+Sport VARCHAR(256),
+PRIMARY KEY(MeetName, MeetDate));
+
+CREATE TABLE Event
+(EventName VARCHAR(256) NOT NULL,
+Round CHAR(1) NOT NULL,
+Gender CHAR(1) NOT NULL,
+MeetName VARCHAR(256) NOT NULL, 
+MeetDate VARCHAR(256) NOT NULL,
+PRIMARY KEY(EventName, Round, Gender, MeetName, MeetDate));
+
+CREATE TABLE TeamCompetedAt
+(MeetName VARCHAR(256) NOT NULL,
+MeetDate VARCHAR(256) NOT NULL,
+SchoolName VARCHAR(256) NOT NULL,
+PRIMARY KEY(MeetName, MeetDate, SchoolName));
+
+CREATE TABLE AthleteCompeteIn
+(AthleteName VARCHAR(256) NOT NULL, 
+SchoolName VARCHAR(256) NOT NULL,
+EventName VARCHAR(256) NOT NULL,
+Round CHAR(1) NOT NULL,
+Gender CHAR(1) NOT NULL,
+MeetName VARCHAR(256) NOT NULL, 
+MeetDate VARCHAR(256) NOT NULL,
+Sport VARCHAR(7) NOT NULL,
+Place INTEGER,
+Mark DECIMAL(6,2) NOT NULL,
+PRIMARY KEY(AthleteName, SchoolName, EventName, Round, Gender, MeetName, MeetDate));
