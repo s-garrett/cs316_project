@@ -2,3 +2,8 @@
 select MIN(Round) AS Men8KFristRound
 from Event
 where Gender = 'M' and EventName = '8K';
+ men8kfristround 
+-----------------
+ F
+(1 row)
+

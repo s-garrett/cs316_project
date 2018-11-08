@@ -3,3 +3,8 @@ select AthleteName, BestMark from Athlete
 where Gender = 'M' and SchoolName = 'Duke' and Event='800'
 Group by AthleteName, BestMark
 having BestMark <= 120;
+ athletename  | bestmark 
+--------------+----------
+ Wisner, Matt |   108.04
+(1 row)
+

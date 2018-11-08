@@ -1,6 +1,7 @@
-SELECT TeamCompetedAt.Name
-FROM Event as a, Meet as b, TeamCompetedAt as c
-WHERE a.MeetName = b.MeetName
-AND c.MeetName = b.MeetTime
-AND c.SchoolName = 'Duke'
-And c.WomenPlace = 1;
+/*List of all Meets where Athletes recorder their Best Mark at*/
+
+SELECT MeetName
+FROM Athlete as a, AthleteCompeteIn as b
+WHERE a.AthleteName=b.AthleteName AND
+a.BestMark=b.Mark
+GROUP BY MeetName;

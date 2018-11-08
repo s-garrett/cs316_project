@@ -1,0 +1,208 @@
+/*List of all Meets where Athletes recorder their Best Mark at*/
+SELECT MeetName
+FROM Athlete as a, AthleteCompeteIn as b
+WHERE a.AthleteName=b.AthleteName AND
+a.BestMark=b.Mark
+GROUP BY MeetName;
+                             meetname                              
+-------------------------------------------------------------------
+ 2017 Blue and Gold Invitational
+ 2017 Carnegie Mellon Quad Meet
+ 2017 Louisville Invitational
+ 2017 Meyo Invitational
+ 2017 Notre Dame Invitational
+ 2017 Rod McCravy Memorial T&F Meet
+ 2017 WINTHROP/ADIDAS Cross Country Invitational
+ 2018 Alex Wilson Invitational
+ 2018 Baldy Castillo Invitational
+ 2018 Charlotte Invitational
+ 2018 Dartmouth Relays - College & Open
+ 2018 ECAC-IC4A Indoor Championships
+ 2018 Hoosier Hills
+ 2018 Indiana University Relays
+ 2018 Joe Piane - Notre Dame Invitational
+ 2018 Lenny Lyles-Clark Wood Invitational
+ 2018 Louisville Invitational
+ 2018 Meyo Invitational
+ 2018 Mountain Dew Gator Cross Country Invitational
+ 2018 National Catholic Invitational
+ 2018 Notre Dame Invitational
+ 39th Sun Angel Classic
+ 3 Stripe Invitational
+ 49er Classic
+ ACC Championships
+ ACC Cross Country Championships
+ ACC Indoor Track & Field Championships
+ ACC Outdoor Championships
+ ACC Outdoor Track & Field Championships
+ adidas DI Pre Nationals
+ adidas XC Challenge
+ adidas XC Challenge NC State Vs Charleston Southern
+ adidas XC Challenge NC State Vs. Davidson
+ adidas XC Challenge NC State Vs East Carolina
+ adidas XC Challenge NC State Vs. Elon
+ adidas XC Challenge NC State Vs. Gardner-Webb
+ adidas XC Challenge NC State Vs Michigan
+ adidas XC Challenge NC State Vs. N. Carolina A&T
+ adidas XC Challenge NC State Vs. N.C. Central
+ adidas XC Challenge NC State Vs. Richmond
+ adidas XC Challenge NC State Vs. UNC-Greensboro
+ adidas XC Challenge NC State Vs. VCU
+ adidas XC Challenge NC State Vs Wake Forest
+ Alabama Crimson Classic
+ Alex Wilson Invitational 2016
+ Art and Linda Maillet UNC Open
+ Battle of the Blues
+ Berry Invitational
+ Bison Outdoor Classic
+ Boston University David Hemery Valentine Invitational
+ Boston University John Thomas Terrier Classic
+ Boston University Multi Team Meet
+ Boston University Multi-Team Meet
+ Boston University Season Opener
+ Bradley "Pink" Classic
+ Bull City Classic
+ BU Scarlet and White
+ Camel City Invitational
+ Carolina Challenge
+ Charlie Thomas Invitational
+ Charlotte Invitational
+ Chile Pepper Cross Country Festival
+ Chile Pepper XC Festival
+ Clemson Bob Pollock Indoor Invitational
+ Clemson Bob Pollock Invitational
+ Clemson Indoor Invitational
+ Clemson Invitational
+ Clemson Last Chance Indoor Invitational
+ Clemson Opener
+ Clemson Orange and Purple Indoor
+ Clemson Orange & Purple Invitational
+ Clemson Tiger Paw Indoor
+ Clemson Tiger Paw Invitational
+ Coast to Coast Battle in Beantown
+ Coast-to-Coast Battle in Beantown
+ Coast-To-Coast Battle in Beantown
+ Commodore Invitational
+ Covered Bridge CC Meet
+ Crimson Classic
+ Crimson Tide Invitational
+ Crusader Open
+ Dennis Craddock Carolina Relays
+ Dick Taylor Carolina Cup
+ Dick Taylor UNC Challenge
+ Doc Hale VT Elite
+ Dr Sander Invitational Columbia Challenge
+ Duke Alumni Meet
+ Duke Invitational
+ Duke Twilight
+ Duquesne Duals Duquesne University vs. U of Pittsburgh
+ Duquesne Duals U of Pittsburgh vs. Youngstown State
+ ECU Pirates XC invitational
+ ECU Pirates XC Invitational
+ Elon Opener
+ Elon XC Opener
+ Florida Atlantic University Collegiate Cross Country Invitational
+ Florida Atlantic University Cross Country Invitational
+ Florida Relays
+ FSU Invitational
+ FSU Relays
+ George Mason Spring Invitational
+ Georgia Bulldog Invitational
+ Georgia Invitational
+ Georgia Tech Invitational
+ Georgia Tech Yellow Jacket Invitational
+ Great American XC Festival
+ GVSU Big Meet Invite (Friday)
+ Harry Groves Spiked Shoe - College
+ Hokie Invitational
+ Hokie Open
+ Home Depot Clyde Littlefield Texas Relays
+ Husky Classic
+ IC4A/ECAC Indoor Track & Field Championships
+ Illini Classic
+ Iowa State Classic
+ JMU Open Invitational Cross Country
+ Joe Piane Invitational
+ Joe Piane Notre Dame Cross Country Invitational
+ Joe Piane Notre Dame Invitational
+ John Thomas Terrier Invitational
+ JSU Foothills Cross Country Invitational
+ JSU Struts XC Season Opener
+ Keydet Invitational
+ Larry Wieczorek Invitational
+ Lenny Lyles-Clark Wood Invitational
+ Liberty Elite Invitational
+ Louisville Classic
+ LSU Alumni Gold
+ Miami Hurricane Alumni Invitational
+ Miami Hurricane Collegiate Invitational
+ Miami Hurricane Invitational
+ Michael Johnson Invitational
+ Michigan Power 5 Invitational
+ Michigan Wolverine Invitational
+ Mountains to Sea Duals
+ Mountain to Sea Open CC Meet
+ Music City Challenge
+ National Relay Championships
+ NCAA Division I East Preliminary Round
+ NCAA Division I Great Lakes Region Cross Country Championships
+ NCAA Division I Indoor Track & Field Championships
+ NCAA Division I Mid-Atlantic Region Cross Country Championships
+ NCAA Division I Northeast Region Cross Country Championships
+ NCAA Division I Outdoor Track & Field Championships
+ NCAA Division I Southeast Region Cross Country Championships
+ NCAA Division I South Region Cross Country Championships
+ NEICAAA Indoor Track & Field Championships
+ Nittany Lion Challenge
+ Notre Dame Cross Country Invitational
+ Nuttycombe Wisconsin Invitational Presented By Under Armour
+ Ocean State Invitational
+ Paul Short Open
+ Penn Relays
+ Penn State National
+ Penn State National Open
+ Penn State Nationals Open
+ Raleigh Relays
+ Razorback Invitational
+ Royals XC Challenge
+ San Francisco State Distance Carnival
+ Seminole Twilight
+ Shawn M. Nassaney Memorial Invitational
+ Spec Towns Invitational
+ Spec Towns Invitational 2016
+ Spiked Shoe
+ Spire NCAA D-1 Indoor Track & Field Classic
+ SPIRE NCAA Division 1 Indoor Track & Field Meet
+ Stanford Invitational
+ Ted Nelson Invitational Saturday
+ Tennessee Dual
+ Tennessee Relays
+ Tennessee Rust Buster
+ Tiger Track Classic
+ Tiger Track Classic 2018
+ Tommy Evans Invitational
+ Torrin Lawrence Memorial
+ Tyson Invitational
+ UAB Blazer Classic
+ UAB Blazer Invitational
+ UB Stampede XC Invite
+ UCS Invitational
+ UF Tom Jones Memorial
+ UMass Minuteman XC Invitational
+ UNF Spring Break Invitational
+ University of Dayton Flyer 5k
+ Univ. of Akron - Campbell/Wright Open
+ USC Power 5 Challenge
+ Vanderbilt Black and Gold
+ Vanderbilt Commodore Invite
+ Vanderbilt Invitational
+ Virginia Challenge
+ Virginia Grand Prix
+ Virginia Tech Challenge
+ Weems Baskin Relays
+ Winthrop Early Season Challenge
+ Wisconsin Pre Nationals
+ Yellow Jacket Invitational
+ YSU College Invite
+(198 rows)
+
