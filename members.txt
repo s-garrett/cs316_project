@@ -1,0 +1,9 @@
+Adamson Bryant - Loaded the dataset into the database and added appropriate indices to improve performances
+
+Stephen Garrett - Scraped data from website to dataset and created backend 
+
+Twazanga Mugala- Wrote queries to test the performance of the database
+
+Nick Solfanelli-Created front end for the application
+
+Keyston Fuller- Wrote queries to test the performance of the database
