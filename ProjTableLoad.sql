@@ -14,3 +14,4 @@ INSERT INTO Event SELECT EventName, Round, Gender, MeetName, MeetDate FROM Athle
 
 INSERT INTO TeamCompetedAt SELECT MeetName, MeetDate, SchoolName FROM AthleteCompeteIn GROUP BY MeetName, MeetDate, SchoolName;
 
+CREATE INDEX pbs ON Athlete(BestMark);
