@@ -1,6 +1,6 @@
 Adamson Bryant - Loaded the dataset into the database and added appropriate indices to improve performances
 
-Stephen Garrett - Scraped data from website to dataset and created backend 
+Stephen Garrett - Scraped data from website to dataset and setup flask app with helloworld.
 
 Twazanga Mugala- Wrote queries to test the performance of the database
 
