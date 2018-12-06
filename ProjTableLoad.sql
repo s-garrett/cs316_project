@@ -1,5 +1,5 @@
 COPY AthleteCompeteIn
-FROM '/home/vagrant/Downloads/ACCmendistance.csv' DELIMITER ',' CSV HEADER;
+FROM '/home/vagrant/Downloads/csdatabaseinfo-3.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO Athlete
 SELECT AthleteName, SchoolName, Gender, MIN(Mark), EventName
@@ -14,4 +14,3 @@ INSERT INTO Event SELECT EventName, Round, Gender, MeetName, MeetDate FROM Athle
 
 INSERT INTO TeamCompetedAt SELECT MeetName, MeetDate, SchoolName FROM AthleteCompeteIn GROUP BY MeetName, MeetDate, SchoolName;
 
-CREATE INDEX pbs ON Athlete(BestMark);

@@ -40,4 +40,5 @@ MeetDate VARCHAR(256) NOT NULL,
 Sport VARCHAR(7) NOT NULL,
 Place INTEGER,
 Mark DECIMAL(6,2) NOT NULL,
+Year INTEGER,
 PRIMARY KEY(AthleteName, SchoolName, EventName, Round, Gender, MeetName, MeetDate));
