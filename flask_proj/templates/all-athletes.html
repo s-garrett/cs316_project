@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block heading %}All Athletes{% endblock %}
+{% block content %}
+<ul>
+  {% for athlete in athletes %}
+  <li><a href="{{url_for('athlete', name=athlete.athlete_name)}}">{{athlete.athlete_name}}</a></li>
+  {% endfor %}
+</ul>
+<hr/>
+{% endblock %}
