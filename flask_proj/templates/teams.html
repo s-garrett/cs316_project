@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block heading %}All Teams{% endblock %}
+{% block content %}
+{% for team in teams %}
+  <li><a href="{{url_for('team', name=team.team_name)}}">{{team.team_name}}</a></li>
+{% endfor %}
+
+  <p>see <a href="/">all athletes</a>.</p>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block heading %}ATHLETES{% endblock %}
+{% block content %}
+{% for athlete in athletes %}
+    <li><a href="{{url_for('athlete', name=athlete.athlete_name)}}">{{athlete.athlete_name}} </li>
+{% endfor %}
+
+  <p>see <a href="/">all athletes</a>.</p>
+{% endblock %}
