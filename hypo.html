@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block heading %}Hypothetical Meet{% endblock %}
+{% block content %}
+<ul>
+  {% for team in teams %}
+  <li><a > {{team.points}}  {{team.school_name}}</a></li>
+  {% endfor %}
+</ul>
+<hr/>
+<ul>
+  {% for athlete in hypo %}
+  <li><a href="{{url_for('athlete', name=athlete.athlete_name)}}">{{athlete.points}}  {{athlete.athlete_name}} {{athlete.school_name}} </a></li>
+  {% endfor %}
+</ul>
+<hr/>
+{% endblock %}
