@@ -10,7 +10,8 @@ db = SQLAlchemy(app)
 @app.route("/")
 def all_athletes():
     athletes = db.session.query(models.athlete)
-    return render_template('all-athletes.html', athletes=athletes)
+    meets = db.session.query(models.athletecompetein)
+    return render_template('all-athletes.html', athletes=athletes, meets=meets)
 
 @app.route('/athlete/<name>')
 def athlete(name):
