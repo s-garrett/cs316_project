@@ -1,7 +1,8 @@
-from flask import Flask, render_template, redirect, url_for, send_from_directory
+from flask import Flask, render_template, redirect, url_for, send_from_directory, request
 from flask_sqlalchemy import SQLAlchemy
 import models
 import forms
+from sqlalchemy import func, and_, or_, asc
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -53,12 +54,25 @@ def team(name):
 
 @app.route('/hypothetical')
 def hypothetical():
-    rightschools=db.session.query(models.athlete.athlete_name.label('athlete_name'), models.athlete.school_name.label('school_name'), models.athlete.event.label('event'), models.athlete.best_mark.label('best_mark'), models.athlete.gender.label('gender')).filter(and_(or_(models.athlete.school_name=='Duke', models.athlete.school_name=='North Carolina') , models.athlete.gender=='M', models.athlete.event=='8K')).order_by(asc(models.athlete.best_mark)).subquery()
-    sq1=db.session.query(rightschools.c.athlete_name.label('athlete_name'), rightschools.c.school_name.label('school_name'), rightschools.c.best_mark.label('mark'),  func.rank().over(order_by=rightschools.c.best_mark.asc(), partition_by=rightschools.c.school_name).label('tmsrnk')).subquery()
-    sq2=db.session.query(func.row_number().over(order_by=sq1.c.mark).label('points'), sq1.c.tmsrnk, sq1.c.athlete_name.label('athlete_name'), sq1.c.school_name.label('school_name'), sq1.c.mark.label('mark')).filter(sq1.c.tmsrnk<8).order_by('mark').subquery()
-    q2=db.session.query(func.row_number().over(order_by=sq1.c.mark).label('points'), sq1.c.tmsrnk, sq1.c.athlete_name.label('athlete_name'), sq1.c.school_name.label('school_name'), sq1.c.mark.label('mark')).filter(sq1.c.tmsrnk<8).order_by('mark')
-    q3=db.session.query(sq2.c.school_name.label('school_name'), func.sum(sq2.c.points).label('points')).group_by(sq2.c.school_name)
-    return render_template('hypo.html', hypo=q2, teams=q3)
+	return render_template('hypothetical.html')
+
+@app.route('/hypo', methods=['POST', 'GET'])
+def hypo():
+	team1=request.form['team1']
+	team2=request.form['team2']
+	team3=request.form['team3']
+	team4=request.form['team4']
+	team5=request.form['team5']
+	gen=request.form['gender']
+	dist=request.form['event']
+
+
+	rightschools=db.session.query(models.athlete.athlete_name.label('athlete_name'), models.athlete.school_name.label('school_name'), models.athlete.event.label('event'), models.athlete.best_mark.label('best_mark'), models.athlete.gender.label('gender')).filter(and_(or_(models.athlete.school_name==team1, models.athlete.school_name==team2, models.athlete.school_name==team3, models.athlete.school_name==team4, models.athlete.school_name==team5) , models.athlete.gender==gen, models.athlete.event==dist)).order_by(asc(models.athlete.best_mark)).subquery()
+	sq1=db.session.query(rightschools.c.athlete_name.label('athlete_name'), rightschools.c.school_name.label('school_name'), rightschools.c.best_mark.label('mark'), func.rank().over(order_by=rightschools.c.best_mark.asc(), partition_by=rightschools.c.school_name).label('tmsrnk')).subquery()
+	sq2=db.session.query(func.row_number().over(order_by=sq1.c.mark).label('points'), sq1.c.tmsrnk, sq1.c.athlete_name.label('athlete_name'), sq1.c.school_name.label('school_name'), sq1.c.mark.label('mark')).filter(sq1.c.tmsrnk<8).order_by('mark').subquery()
+	q2=db.session.query(func.row_number().over(order_by=sq1.c.mark).label('points'), sq1.c.tmsrnk, sq1.c.athlete_name.label('athlete_name'), sq1.c.school_name.label('school_name'), sq1.c.mark.label('mark')).filter(sq1.c.tmsrnk<8).order_by('mark')
+	q3=db.session.query(sq2.c.school_name.label('school_name'), func.sum(sq2.c.points).label('points')).group_by(sq2.c.school_name).order_by('points')
+	return render_template('hypo.html', hypo=q2, teams=q3)
 
 
 @app.template_filter('pluralize')

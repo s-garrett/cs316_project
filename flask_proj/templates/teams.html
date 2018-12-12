@@ -2,8 +2,7 @@
 {% block heading %}All Teams{% endblock %}
 {% block content %}
 {% for team in teams %}
-  <li><a href="{{url_for('team', name=team.team_name)}}">{{team.team_name}}</a></li>
+  <li style="width: 100%;padding-inline-start: 40px"><a href="{{url_for('team', name=team.team_name)}}">{{team.team_name}}</a></li>
 {% endfor %}
 
-  <p>see <a href="/">all athletes</a>.</p>
 {% endblock %}

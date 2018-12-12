@@ -12,13 +12,11 @@ th, td {
 </style>
 <table style = "width: 100%">
   <tr>
-    <th>
       <ul>
         {% for athlete in athletes %}
         <li><a href="{{url_for('athlete', name=athlete.athlete_name)}}">{{athlete.athlete_name}}</a></li>
         {% endfor %}
       </ul>
-    </th>
     <!-- <th colspan="2">{
       <ul>
         {% for meet in meets %}
@@ -26,9 +24,6 @@ th, td {
         {% endfor %}
       </ul>
     </th> -->
-    <ul>
-      <li><a href="{{url_for('teams')}}">TEAMS</a></li>
-    </ul>
   </tr>
 </table>
 

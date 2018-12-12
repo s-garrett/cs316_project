@@ -1,9 +1,9 @@
-{% extends 'allathletes_template.html' %}
+{% extends 'layout.html' %}
 {% block heading %}Athlete Information: {{athlete[0].athlete_name}} School: {{athlete[0].school_name}},  Gender: {{athlete[0].gender}}{% endblock %}
 {% block content %}
 {% for info in athlete %}
   <p>Event: {{info.event}}: Best Mark: {{info.best_mark}}</p>
 {% endfor %}
 
-  <p>see <a href="/">all athletes</a>.</p>
+  <p>Back to <a href="/all-athletes">all athletes</a>.</p>
 {% endblock %}
