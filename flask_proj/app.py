@@ -31,6 +31,7 @@ def all_athletes():
     meets = db.session.query(models.athletecompetein)
     return render_template('all-athletes.html', meets=meets, athletes=athletes)
 
+    
 @app.route('/athlete/<name>')
 def athlete(name):
     athlete = db.session.query(models.athlete)\
@@ -42,12 +43,13 @@ def teams():
     teams = db.session.query(models.athletecompetein.school_name.distinct().label('team_name'))
     return render_template('teams.html', teams=teams)
 
+
 @app.route('/teams/<name>')
 def team(name):
     athletessq = db.session.query(models.athlete.athlete_name.label('athlete_name'), models.athlete.school_name)\
         .filter(models.athlete.school_name == name).subquery()
     distathletes=db.session.query(athletessq.c.athlete_name.distinct().label('athlete_name'))
-    return render_template('team.html', athletes=distathletes)
+    return render_template('team.html', athletes=distathletes, name=name)
 
 @app.route('/hypothetical')
 def hypothetical():

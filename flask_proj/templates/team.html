@@ -1,5 +1,5 @@
-{% extends 'allathletes_template.html' %}
-{% block heading %}ATHLETES{% endblock %}
+{% extends 'layout.html' %}
+{% block heading %}{{name}}{% endblock %}
 {% block content %}
 {% for athlete in athletes %}
     <li><a href="{{url_for('athlete', name=athlete.athlete_name)}}">{{athlete.athlete_name}} </li>
