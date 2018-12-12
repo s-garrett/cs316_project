@@ -1,9 +1,9 @@
-Adamson Bryant - Loaded the dataset into the database and added appropriate indices to improve performances
+Adamson Bryant - Created database and cleaned scraped data to load the dataset into the database, added appropriate indices to improve performances, created backend code for hypothetical meets
 
-Stephen Garrett - Scraped data from website to dataset and setup flask app with helloworld.
+Stephen Garrett - Scraped data from website to dataset and setup majority of the flask app, connecting backend to database
 
-Twazanga Mugala- Wrote queries to test the performance of the database
+Twazanga Mugala- Created test queries for testing database performance, worked on connecting frontend to backend
 
-Nick Solfanelli-Created front end for the application
+Nick Solfanelli-Worked on frontend design and connecting frontend to backend
 
-Keyston Fuller- Wrote queries to test the performance of the database
+Keyston Fuller- Wrote queries to test the performance of the database and worked on database design

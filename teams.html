@@ -1,0 +1,8 @@
+{% extends 'allathletes_template.html' %}
+{% block heading %}All Teams{% endblock %}
+{% block content %}
+{% for team in teams %}
+  <li style="width: 100%;padding-inline-start: 40px"><a href="{{url_for('team', name=team.team_name)}}">{{team.team_name}}</a></li>
+{% endfor %}
+
+{% endblock %}
