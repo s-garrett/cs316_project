@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 import models
 import forms
@@ -6,6 +6,14 @@ import forms
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
+
+@app.route('/js/<path:path>')
+def send_js(path):
+    return app.send_static_file('js/'+path)
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    return app.send_static_file('css/'+ path)
 
 @app.route("/")
 def all_athletes():
