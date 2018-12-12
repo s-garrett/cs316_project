@@ -9,13 +9,23 @@ db = SQLAlchemy(app)
 
 @app.route('/js/<path:path>')
 def send_js(path):
-    return app.send_static_file('js/'+path)
+    return app.send_static_file('js/'+ path)
 
 @app.route('/css/<path:path>')
 def send_css(path):
     return app.send_static_file('css/'+ path)
 
-@app.route("/")
+@app.route('/images/<path:path>')
+def send_image(path):
+	return app.send_static_file('img/'+ path)
+
+
+@app.route('/')
+def home():
+	return render_template('index.html')
+	
+
+@app.route("/all-athletes")
 def all_athletes():
     athletes = db.session.query(models.athlete)
     meets = db.session.query(models.athletecompetein)
