@@ -1,0 +1,31 @@
+{% extends 'allathletes_template.html' %}
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+<table style = "width: 100%">
+  <tr>
+      <ul>
+        {% for athlete in athletes %}
+        <li><a href="{{url_for('athlete', name=athlete.athlete_name)}}">{{athlete.athlete_name}}</a></li>
+        {% endfor %}
+      </ul>
+    <!-- <th colspan="2">{
+      <ul>
+        {% for meet in meets %}
+          <li> {{meet.meet_name}} </li>
+        {% endfor %}
+      </ul>
+    </th> -->
+  </tr>
+</table>
+
+<hr/>
+{% endblock %}

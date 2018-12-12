@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block heading %}{{name}}{% endblock %}
+{% block content %}
+{% for athlete in athletes %}
+<body bgcolor="#bbc0c4">
+  <li><a style="text-decoration: none;" href="{{url_for('athlete', name=athlete.athlete_name)}}">{{athlete.athlete_name}}</a></li>
+{% endfor %}
+
+  <p>Back to <a href="/teams">all teams</a>.</p>
+</body>
+{% endblock %}
